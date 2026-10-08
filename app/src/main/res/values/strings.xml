@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">DSAM-ACT03-Android-Studio-Inicial</string>
+    <string name="title">B &amp; O BMI CALCULATOR</string>
+    <string name="icoMasculi">Icono Masculino</string>
+    <string name="male">MALE</string>
+    <string name="icoFemeni">Icono Femenino</string>
+    <string name="weight">WEIGHT</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="age">AGE</string>
+    <string name="female">FEMALE</string>
+    <string name="height">HEIGHT</string>
+    <string name="inches">inches</string>
+    <string name="calculate">CALCULATE</string>
+    <string name="reCalculate">RE-CALCULATE</string>
+    <string name="lt">&lt;</string>
+    <string name="resultTitle">BMI Results</string>
+    <string name="urResults">YOUR RESULTS</string>
+    <string name="normal">NORMAL</string>
+
+
 </resources>

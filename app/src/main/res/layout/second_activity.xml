@@ -5,7 +5,6 @@
     android:orientation="vertical"
     android:padding="0dp">
     <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/cardBackUpper"
         android:layout_width="match_parent"
@@ -13,7 +12,8 @@
         android:layout_margin="0dp"
         app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="0dp"
-        app:cardElevation="6dp">
+        app:cardElevation="6dp"
+        android:backgroundTint="@color/background">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -23,15 +23,14 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="4dp"
-                android:backgroundTint="@color/black"
+                android:backgroundTint="@color/background"
                 android:minWidth="0dp"
                 android:minHeight="0dp"
                 android:padding="0dp"
-                android:text="&lt;"
+                android:text="@string/lt"
                 android:textColor="@color/white"
                 android:textSize="18sp"
-                app:insetBottom="0dp"
-                app:insetTop="0dp"
+
                 />
             <TextView
                 android:layout_width="0dp"
@@ -39,16 +38,18 @@
                 android:layout_weight="1"
                 android:layout_marginEnd="52dp"
                 android:gravity="center"
-                android:text="BMI Results"
+                android:text="@string/resultTitle"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:background="@color/background">
 
         <TextView
             android:layout_width="match_parent"
@@ -57,77 +58,90 @@
             android:layout_marginBottom="16dp"
             android:layout_marginStart="16dp"
             android:textSize="36sp"
-            android:text="YOUR RESULTS" />
+            android:text="@string/urResults"
+            android:textColor="@color/white"
+            android:textStyle="bold"/>
     </LinearLayout>
-
-    <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardResults"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        app:cardCornerRadius="12dp"
-        android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="6dp">
-        <LinearLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-            android:gravity="center">
-            <TextView
-                android:id="@+id/bmiText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="XXXXX"/>
-            <TextView
-                android:id="@+id/bmiNum"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="72sp"
-
-                android:text="XXXXX"/>
-            <TextView
-                android:id="@+id/bmiMiniText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:text="XXXXX"/>
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/cardReCalculate"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:layout_margin="0dp"
-        app:cardCornerRadius="0dp"
-        android:clickable="true"
-        android:focusable="true"
-        app:cardBackgroundColor="@color/white"
-        app:cardElevation="6dp"
-        >
-        <LinearLayout
+        android:padding="0dp"
+        android:background="@color/background">
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardResults"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:text="RE-CALCULATE"
-                android:gravity="center"/>
-        </LinearLayout>
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            app:cardCornerRadius="12dp"
+            android:layout_margin="8dp"
+            app:cardBackgroundColor="@color/cardLight"
+            app:cardElevation="6dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:gravity="center">
+                <TextView
+                    android:id="@+id/bmiText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/normal"
+                    android:textColor="@color/normal"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:id="@+id/bmiNum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="72sp"
+
+                    android:text="22.43"
+                    android:textColor="@color/white"/>
+                <TextView
+                    android:id="@+id/bmiMiniText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:text="@string/normal"
+                    android:textColor="@color/textGrey"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/cardReCalculate"
+            android:layout_width="match_parent"
+            android:layout_height="64dp"
+            android:layout_margin="0dp"
+            app:cardCornerRadius="0dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/calculate"
+            app:cardElevation="6dp"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:text="@string/reCalculate"
+                    android:gravity="center"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+            </LinearLayout>
 
 
-    </androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="background">#090d1f</color>
+    <color name="cards">#0a0e21</color>
+    <color name="textGrey">#8d8e98</color>
+    <color name="buttonGrey">#4c4f5e</color>
+    <color name="slider">#512da8</color>
+    <color name="calculate">#4f2ca5</color>
+    <color name="normal">#24d976</color>
+    <color name="cardLight">#1d1e33</color>
+    <color name="buttons">#4C4F5E</color>
 </resources>
