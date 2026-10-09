@@ -7,6 +7,7 @@ import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.google.android.material.button.MaterialButton
@@ -18,7 +19,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var ageTV : TextView
     private lateinit var weightTV : TextView
     private var isMale : Boolean = true
+    private  lateinit var btnMale : CardView
 
+    private lateinit var btnFemale : CardView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -29,10 +32,11 @@ class MainActivity : AppCompatActivity() {
             insets
         }
 
-        val btnMale = findViewById<CardView>(R.id.cardMale)
+        btnMale = findViewById<CardView>(R.id.cardMale)
+
+        btnFemale = findViewById<CardView>(R.id.cardFemale)
         btnMale.setOnClickListener { isMale = true
             updateGenderSelection()}
-        val btnFemale = findViewById<CardView>(R.id.cardFemale)
         btnFemale.setOnClickListener { isMale = false
             updateGenderSelection()}
         heightTV = findViewById<TextView>(R.id.tvHeightValue)
@@ -83,14 +87,12 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateGenderSelection() {
         val colorSelected = ContextCompat.getColor(this, R.color.card_background_selected)
-        val colorUnselected = ContextCompat.getColor(this, R.color.card_background)
+        val colorUnselected = ContextCompat.getColor(this, R.color.cards)
 
         if (isMale) {
-            // Marcamos la tarjeta de hombre y desmarcamos la de mujer
             btnMale.setCardBackgroundColor(colorSelected)
             btnFemale.setCardBackgroundColor(colorUnselected)
         } else {
-            // Marcamos la tarjeta de mujer y desmarcamos la de hombre
             btnFemale.setCardBackgroundColor(colorSelected)
             btnMale.setCardBackgroundColor(colorUnselected)
         }
