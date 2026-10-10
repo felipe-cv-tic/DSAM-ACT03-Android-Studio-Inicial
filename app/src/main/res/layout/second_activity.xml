@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/mainSecond"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -20,6 +21,7 @@
             android:orientation="horizontal"
             android:gravity="center_vertical">
             <Button
+                android:id="@+id/back"
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_marginStart="4dp"
@@ -91,7 +93,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
-                    android:text="@string/normal"
+                    android:text="@string/bmiText"
                     android:textColor="@color/normal"
                     android:textStyle="bold"/>
                 <TextView
@@ -100,14 +102,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="72sp"
 
-                    android:text="22.43"
+                    android:text="@string/bmiNum"
                     android:textColor="@color/white"/>
                 <TextView
                     android:id="@+id/bmiMiniText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="16sp"
-                    android:text="@string/normal"
+                    android:text="@string/bmiText"
                     android:textColor="@color/textGrey"/>
 
             </LinearLayout>

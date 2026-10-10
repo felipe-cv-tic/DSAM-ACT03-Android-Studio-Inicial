@@ -1,5 +1,6 @@
 package com.example.dsam_act03_android_studio_inicial
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.SeekBar
@@ -20,6 +21,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var weightTV : TextView
     private var isMale : Boolean = true
     private  lateinit var btnMale : CardView
+
+
 
     private lateinit var btnFemale : CardView
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -81,7 +84,20 @@ class MainActivity : AppCompatActivity() {
             ageTV.text = (Integer.parseInt(ageTV.text.toString())+1).toString()
         }
 
+        val btnCalculate = findViewById<CardView>(R.id.cardCalculate)
 
+        btnCalculate.setOnClickListener {
+
+            val resultadoBMI = calcularBMI(isMale,Integer.parseInt(ageTV.text.toString()) , height, Integer.parseInt(weightTV.text.toString()))
+            val rangoBMI = evaluarRangoBMI(resultadoBMI)
+
+            val intent = Intent(this, SecondActivity::class.java).apply {
+                putExtra("EXTRA_BMI_RESULT", resultadoBMI)
+                putExtra("EXTRA_BMI_RANGE", rangoBMI)
+            }
+
+            startActivity(intent)
+        }
 
     }
 
@@ -96,6 +112,8 @@ class MainActivity : AppCompatActivity() {
             btnFemale.setCardBackgroundColor(colorSelected)
             btnMale.setCardBackgroundColor(colorUnselected)
         }
+
+
     }
 
     fun calcularBMI(isMale: Boolean, edad: Int, alturaInches: Int, pesoLbs: Int): Double {

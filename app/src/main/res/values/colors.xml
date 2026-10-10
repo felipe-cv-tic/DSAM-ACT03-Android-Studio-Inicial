@@ -12,4 +12,6 @@
     <color name="cardLight">#1d1e33</color>
     <color name="buttons">#4C4F5E</color>
     <color name="card_background_selected">#27335B</color>
+    <color name="sobrepeso">#F60000</color>
+    <color name="bajopeso">#00A8F6</color>
 </resources>
